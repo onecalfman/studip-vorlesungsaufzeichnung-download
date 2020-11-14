@@ -9,6 +9,11 @@ function studipDownloadCreateButton(series, name, url, i) {
 	document.getElementsByClassName("oce_list list")[0].children[i].appendChild(button);
 	button.onclick = function(){
 		window.open(url)
+		//browser.downloads.download(
+		//{
+		//	url : url,
+		//	filename : name
+		//})
 	};
 }
 
