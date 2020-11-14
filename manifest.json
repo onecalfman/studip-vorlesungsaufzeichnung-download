@@ -4,7 +4,7 @@
     "manifest_version": 2,
     "content_scripts": [{
         "js": ["script.js"],
-        "matches": ["<all_urls>"]
+        "matches": ["https://*/seminar_main.php*opencast*"]
     }],
-    "permissions": ["downloads", "<all_urls>"]
+    "permissions": ["downloads", "https://*/seminar_main.php*opencast*"]
 }
