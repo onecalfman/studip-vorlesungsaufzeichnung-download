@@ -1,16 +1,18 @@
 {
     "name": "StudIP Downloader",
-    "version": "1.0",
+    "version": "1.2",
+    "icons": {
+	    "128" : "icon-128px.png",
+	    "48" : "icon-48px.png",
+	    "16" : "icon-16px.png"
+    },
     "manifest_version": 2,
-    "content_scripts": [{
+    "permissions": ["avtiveTab"],
+    "background": [{
         "js": ["script.js"],
         "matches": [
 		"https://*/plugins.php/opencast*",
 		"https://*/seminar_main.php*opencast*"
 	]
-    }],
-    "permissions": ["downloads", 
-		"https://*/plugins.php/opencast*",
-		"https://*/seminar_main.php*opencast*"
-    ]
+    }]
 }
