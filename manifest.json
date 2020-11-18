@@ -8,11 +8,13 @@
     },
     "manifest_version": 2,
     "permissions": ["avtiveTab"],
-    "background": [{
+    "content_scripts": [
+	    {
         "js": ["script.js"],
         "matches": [
 		"https://*/plugins.php/opencast*",
 		"https://*/seminar_main.php*opencast*"
+			]
+    		}
 	]
-    }]
 }
