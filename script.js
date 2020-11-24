@@ -1,5 +1,8 @@
+const studip_url = window.location.origin
+const opencast_url = 'https://opencast-present.rz.tu-bs.de'
+
 function studipDownloadCreateButton(series, name, url, i) {
-	url = url.replace("https://studip.tu-braunschweig.de", "https://opencast-present.rz.tu-bs.de");;
+	url = url.replace(studip_url, opencast_url);
 
 	button = document.createElement('button');
 	button.setAttribute('onclick', 'location.href=' + url);
@@ -38,7 +41,7 @@ async function studipDownloaderGetData() {
 	var episodes = document.getElementsByClassName("oce_list list")[0].children;
 	
 	for(let i = 0; i < episodes.length; i++) {
-		url = "https://studip.tu-braunschweig.de/search/episode.json?id=" + episodes[i].id
+		url = studip_url + '/search/episode.json?id=' + episodes[i].id
 		fetch(url)
   		.then(response => response.json())
   		.then(data => studipDownloadParseData(data,i));

@@ -7,7 +7,6 @@
 	    "16" : "icon-16px.png"
     },
     "manifest_version": 2,
-    "permissions": ["avtiveTab"],
     "content_scripts": [
 	    {
         "js": ["script.js"],
