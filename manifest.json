@@ -12,7 +12,8 @@
         "js": ["script.js"],
         "matches": [
 		"https://*/plugins.php/opencast*",
-		"https://*/seminar_main.php*opencast*"
+		"https://*/seminar_main.php*opencast*",
+		"https://studip.tu-braunschweig.de/plugins.php/courseware*"
 			]
     		}
 	]
