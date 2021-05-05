@@ -18,6 +18,28 @@ async function studipDownloaderGetData() {
 
 async function coursewareDownloaderGetData() {
 	let i=0
+	vids = document.getElementsByClassName("cw-iav-player")
+	controls = document.getElementsByClassName("cw-iav-controls")
+
+	for(i in vids) {
+		let url = studip_url + vids[i].innerHTML.split('"')[1].replaceAll(';','&').replaceAll(':','&').replaceAll('&amp', '');
+		//let button = document.createElement('button');
+		let linebreak = document.createElement('br');
+		let button = document.createElement('a');
+		//button.setAttribute('onclick', 'location.href=' + url);
+		//button.setAttribute('type', 'button');
+		//button.innerText = ("Download: " + name);
+		//button.classList.add('iw-iav-playbutton')
+		button.href = url;
+		button.innerText = url;
+		controls[i].appendChild(linebreak)
+		controls[i].appendChild(button)
+	}
+}
+
+/*
+async function coursewareDownloaderGetData() {
+	let i=0
 	id=document.getElementsByTagName("iframe")[0].src.match(/id=(.*)&/)[1]
 	if(! id.includes('-')) {
 		setTimeout(coursewareDownloaderGetData, 500);
@@ -28,6 +50,7 @@ async function coursewareDownloaderGetData() {
   	.then(response => response.json())
   	.then(data => studipDownloadParseData(data,i));
 }
+*/
 
 function studipDownloadParseData(res,i) {
 	var videoNum = 0;
